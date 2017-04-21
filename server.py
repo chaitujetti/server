@@ -111,8 +111,8 @@ def users_login():
                 query_output = sql_result["result"]
                 # print_debug(str(query_output))
                 if len(query_output) == 0:
-                    # output["message"] = "Sorry Username Not Found"
-                    output["message"] = "Check Username or Password"
+                    output["message"] = "Please Register !! - Sorry Username Not Found"
+                    # output["message"] = "Check Username or Password"
                 else:
                     for cur_output in query_output:
                         cur_user_name = cur_output[3]
