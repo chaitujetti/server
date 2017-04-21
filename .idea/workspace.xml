@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5df000b5-4d68-4d78-bc4f-3dc494554c91" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.py" afterPath="$PROJECT_DIR$/server.py" />
     </list>
     <ignored path="server.iws" />
@@ -36,14 +37,13 @@
       <file leaf-file-name="server.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
+            <state relative-caret-position="0">
+              <caret line="0" column="16" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
               <folding>
-                <element signature="e#0#16#0" expanded="true" />
-                <marker date="1492743591000" expanded="true" signature="1493:1558" ph="INSERT INTO users... " />
-                <marker date="1492743591000" expanded="true" signature="2171:2206" ph="Select * Fro... users" />
-                <marker date="1492743591000" expanded="true" signature="2171:2222" ph="Select * Fro... users" />
-                <marker date="1492743591000" expanded="true" signature="2172:2206" ph="select * fro... users" />
+                <marker date="1492743671000" expanded="true" signature="1495:1560" ph="INSERT INTO users... " />
+                <marker date="1492743671000" expanded="true" signature="2173:2208" ph="Select * Fro... users" />
+                <marker date="1492743671000" expanded="true" signature="2173:2224" ph="Select * Fro... users" />
+                <marker date="1492743671000" expanded="true" signature="2174:2208" ph="select * fro... users" />
               </folding>
             </state>
           </provider>
@@ -463,14 +463,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
+        <state relative-caret-position="0">
+          <caret line="0" column="16" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
           <folding>
-            <element signature="e#0#16#0" expanded="true" />
-            <marker date="1492743591000" expanded="true" signature="1493:1558" ph="INSERT INTO users... " />
-            <marker date="1492743591000" expanded="true" signature="2171:2206" ph="Select * Fro... users" />
-            <marker date="1492743591000" expanded="true" signature="2171:2222" ph="Select * Fro... users" />
-            <marker date="1492743591000" expanded="true" signature="2172:2206" ph="select * fro... users" />
+            <marker date="1492743671000" expanded="true" signature="1495:1560" ph="INSERT INTO users... " />
+            <marker date="1492743671000" expanded="true" signature="2173:2208" ph="Select * Fro... users" />
+            <marker date="1492743671000" expanded="true" signature="2173:2224" ph="Select * Fro... users" />
+            <marker date="1492743671000" expanded="true" signature="2174:2208" ph="select * fro... users" />
           </folding>
         </state>
       </provider>
