@@ -1,4 +1,5 @@
 import scrapy
+import re
 
 class OffersSpider(scrapy.Spider):
 	name = "Offers"
@@ -10,29 +11,42 @@ class OffersSpider(scrapy.Spider):
 		passage = response.css('p::text').extract()
 		a = response.css('a::text').extract()
 		fo = open('offers.txt', 'w')
+		f1 = open('sale.txt', 'w')
 		for i in title:
-			i = i.replace('\t', '')
+			i = i.strip()
 			i = i.replace('\n', '')
-			if i != '':
-				fo.write((i+',').encode('utf-8'))
+			k = re.search( r'(offer|off|Offer|OFFER|OFF|sale|Sale|SALE)', i, re.M|re.I)
+			if k != None:
+				if k.group(1) != None:
+					fo.write((i+'|Calvin Klein,').encode('utf-8'))
 		for i in heading:
-			i = i.replace('\t', '')
+			i = i.strip()
 			i = i.replace('\n', '')
-			if i != '':
-				fo.write((i+',').encode('utf-8'))
+			k = re.search( r'(offer|off|Offer|OFFER|OFF|sale|Sale|SALE)', i, re.M|re.I)
+			if k != None:
+				if k.group(1) != None:
+					fo.write((i+'|Calvin Klein,').encode('utf-8'))
 		for i in passage:
-			i = i.replace('\t', '')
+			i = i.strip()
 			i = i.replace('\n', '')
-			if i != '':
-				fo.write((i+',').encode('utf-8'))
-		fo.close()
-		fo = open('sale.txt', 'w')
+			k = re.search( r'(offer|off|Offer|OFFER|OFF|sale|Sale|SALE)', i, re.M|re.I)
+			if k != None:
+				if k.group(1) != None:
+					fo.write((i+'|Calvin Klein,').encode('utf-8'))
 		for i in a:
-			i = i.replace('\t', '')
+			i = i.strip()
 			i = i.replace('\n', '')
-			if i != '':
-				fo.write((i+',').encode('utf-8'))
+			k = re.search( r'(offer|off|Offer|OFFER|OFF|sale|Sale|SALE)', i, re.M|re.I)
+			if k != None:
+				if k.group(1) != None:
+					fo.write((i+'|Calvin Klein,').encode('utf-8'))
+				else:
+					f1.write((i+'|Calvin Klein,').encode('utf-8'))
+			else:
+				if i != '':
+					f1.write((i+'|Abercrombie,').encode('utf-8'))
 		fo.close()
+		f1.close()
 
 		yield {
 			'title': title,
@@ -40,3 +54,5 @@ class OffersSpider(scrapy.Spider):
 			'passage': passage,
 			'a': a
 		}
+
+
