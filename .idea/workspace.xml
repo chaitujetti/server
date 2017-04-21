@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5df000b5-4d68-4d78-bc4f-3dc494554c91" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.py" afterPath="$PROJECT_DIR$/server.py" />
     </list>
     <ignored path="server.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,28 +34,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="server.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="server.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="123" column="51" selection-start-line="123" selection-start-column="51" selection-end-line="123" selection-end-column="51" />
+            <state relative-caret-position="-2308">
+              <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
-                <marker date="1492816060000" expanded="true" signature="1923:1988" ph="INSERT INTO users... " />
-                <marker date="1492816060000" expanded="true" signature="2601:2636" ph="Select * Fro... users" />
-                <marker date="1492816060000" expanded="true" signature="2601:2652" ph="Select * Fro... users" />
-                <marker date="1492816060000" expanded="true" signature="2602:2636" ph="select * fro... users" />
+                <marker date="1492818551000" expanded="true" signature="1925:1990" ph="INSERT INTO users... " />
+                <marker date="1492818551000" expanded="true" signature="2603:2638" ph="Select * Fro... users" />
+                <marker date="1492818551000" expanded="true" signature="2603:2654" ph="Select * Fro... users" />
+                <marker date="1492818551000" expanded="true" signature="2604:2638" ph="select * fro... users" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -68,8 +58,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/server.py" />
       </list>
     </option>
   </component>
@@ -473,25 +463,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="123" column="51" selection-start-line="123" selection-start-column="51" selection-end-line="123" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-            <marker date="1492816060000" expanded="true" signature="1923:1988" ph="INSERT INTO users... " />
-            <marker date="1492816060000" expanded="true" signature="2601:2636" ph="Select * Fro... users" />
-            <marker date="1492816060000" expanded="true" signature="2601:2652" ph="Select * Fro... users" />
-            <marker date="1492816060000" expanded="true" signature="2602:2636" ph="select * fro... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2308">
+          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+            <marker date="1492818551000" expanded="true" signature="1925:1990" ph="INSERT INTO users... " />
+            <marker date="1492818551000" expanded="true" signature="2603:2638" ph="Select * Fro... users" />
+            <marker date="1492818551000" expanded="true" signature="2603:2654" ph="Select * Fro... users" />
+            <marker date="1492818551000" expanded="true" signature="2604:2638" ph="select * fro... users" />
+          </folding>
         </state>
       </provider>
     </entry>

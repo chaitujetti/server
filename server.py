@@ -12,8 +12,8 @@ database_location = "./database/"
 database_location = "/var/www/html/server/database/"
 database_name = database_location + "mc_project13.db"
 random_num = str(rand.randrange(0,1000))
-print_debug_flag = True
-random_input_flag = True
+print_debug_flag = False
+random_input_flag = False
 
 
 app = Flask(__name__)
