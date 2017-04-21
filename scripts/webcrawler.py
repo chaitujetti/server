@@ -1,46 +1,42 @@
-import urllib
-import re
-import HTMLParser
+import scrapy
 
-# urllist = []
-# urllist.append("http://www.calvinklein.us/shop/en/ck/sale")
+class OffersSpider(scrapy.Spider):
+	name = "Offers"
+	start_urls = ['http://www.calvinklein.us/shop/en/ck/sale']
 
-# urlText = []
-# class parseText(HTMLParser.HTMLParser):        
-#     def handle_data(self, data):
-#     	data = data.replace('\n', '')
-#         if data not in ['', ' ', ',', ', ', ' ,'] :
-#         	urlText.append(data)
+	def parse(self, response):
+		title = response.css('title::text').extract()
+		heading = response.css('h2::text').extract()
+		passage = response.css('p::text').extract()
+		a = response.css('a::text').extract()
+		fo = open('offers.txt', 'w')
+		for i in title:
+			i = i.replace('\t', '')
+			i = i.replace('\n', '')
+			if i != '':
+				fo.write((i+',').encode('utf-8'))
+		for i in heading:
+			i = i.replace('\t', '')
+			i = i.replace('\n', '')
+			if i != '':
+				fo.write((i+',').encode('utf-8'))
+		for i in passage:
+			i = i.replace('\t', '')
+			i = i.replace('\n', '')
+			if i != '':
+				fo.write((i+',').encode('utf-8'))
+		fo.close()
+		fo = open('sale.txt', 'w')
+		for i in a:
+			i = i.replace('\t', '')
+			i = i.replace('\n', '')
+			if i != '':
+				fo.write((i+',').encode('utf-8'))
+		fo.close()
 
-# lParser = parseText()
-# for i in urllist:
-# 	urlText = []
-# 	lParser.feed(urllib.urlopen(i).read())
-# 	print urlText
-# lParser.close()
-
-# class AppURLopener(urllib.request.FancyURLopener):
-#     version = "Mozilla/5.0"
-
-# opener = AppURLopener()
-# response = opener.open('http://httpbin.org/user-agent')
-
-import urllib2,cookielib
-
-site= "http://www.calvinklein.us/shop/en/ck/sale"
-hdr = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11',
-       'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-       'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
-       'Accept-Encoding': 'none',
-       'Accept-Language': 'en-US,en;q=0.8',
-       'Connection': 'keep-alive'}
-
-req = urllib2.Request(site, headers=hdr)
-
-try:
-    page = urllib2.urlopen(req)
-except urllib2.HTTPError, e:
-    print e.fp.read()
-
-content = page.read()
-print content
+		yield {
+			'title': title,
+			'heading': heading,
+			'passage': passage,
+			'a': a
+		}
