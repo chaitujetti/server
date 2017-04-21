@@ -1,0 +1,6 @@
+*.DS_Store
+
+# Intellij
+*.iml
+**/.idea/workspace.xml
+**/.idea/libraries
