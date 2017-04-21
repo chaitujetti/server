@@ -49,8 +49,8 @@ def insert_users_new(user_name,password,user_email_id):
     sql_output = {}
     sql_output["success"] = True
     sql_output["message"] = ""
+    sql_connection = sql.connect(database_name)
     try:
-        sql_connection = sql.connect(database_name)
         sql_cursor = sql_connection.cursor()
         if random_input_flag:
             random_num = str(rand.randrange(0, 1000))
@@ -72,8 +72,8 @@ def select_users_where(key,value):
     sql_output["success"] = True
     sql_output["message"] = ""
     sql_output["result"] = []
+    sql_connection = sql.connect(database_name)
     try:
-        sql_connection = sql.connect(database_name)
         sql_cursor = sql_connection.cursor()
         select_query = "Select * From users Where %s = '%s' " % (key, value)
         sql_cursor.execute(select_query)
