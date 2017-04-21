@@ -1,46 +1,58 @@
-import urllib
+import scrapy
 import re
-import HTMLParser
 
-# urllist = []
-# urllist.append("http://www.calvinklein.us/shop/en/ck/sale")
+class OffersSpider(scrapy.Spider):
+	name = "Offers"
+	start_urls = ['http://www.calvinklein.us/shop/en/ck/sale']
 
-# urlText = []
-# class parseText(HTMLParser.HTMLParser):        
-#     def handle_data(self, data):
-#     	data = data.replace('\n', '')
-#         if data not in ['', ' ', ',', ', ', ' ,'] :
-#         	urlText.append(data)
+	def parse(self, response):
+		title = response.css('title::text').extract()
+		heading = response.css('h2::text').extract()
+		passage = response.css('p::text').extract()
+		a = response.css('a::text').extract()
+		fo = open('offers.txt', 'w')
+		f1 = open('sale.txt', 'w')
+		for i in title:
+			i = i.strip()
+			i = i.replace('\n', '')
+			k = re.search( r'(offer|off|Offer|OFFER|OFF|sale|Sale|SALE)', i, re.M|re.I)
+			if k != None:
+				if k.group(1) != None:
+					fo.write((i+'|Calvin Klein,').encode('utf-8'))
+		for i in heading:
+			i = i.strip()
+			i = i.replace('\n', '')
+			k = re.search( r'(offer|off|Offer|OFFER|OFF|sale|Sale|SALE)', i, re.M|re.I)
+			if k != None:
+				if k.group(1) != None:
+					fo.write((i+'|Calvin Klein,').encode('utf-8'))
+		for i in passage:
+			i = i.strip()
+			i = i.replace('\n', '')
+			k = re.search( r'(offer|off|Offer|OFFER|OFF|sale|Sale|SALE)', i, re.M|re.I)
+			if k != None:
+				if k.group(1) != None:
+					fo.write((i+'|Calvin Klein,').encode('utf-8'))
+		for i in a:
+			i = i.strip()
+			i = i.replace('\n', '')
+			k = re.search( r'(offer|off|Offer|OFFER|OFF|sale|Sale|SALE)', i, re.M|re.I)
+			if k != None:
+				if k.group(1) != None:
+					fo.write((i+'|Calvin Klein,').encode('utf-8'))
+				else:
+					f1.write((i+'|Calvin Klein,').encode('utf-8'))
+			else:
+				if i != '':
+					f1.write((i+'|Abercrombie,').encode('utf-8'))
+		fo.close()
+		f1.close()
 
-# lParser = parseText()
-# for i in urllist:
-# 	urlText = []
-# 	lParser.feed(urllib.urlopen(i).read())
-# 	print urlText
-# lParser.close()
+		yield {
+			'title': title,
+			'heading': heading,
+			'passage': passage,
+			'a': a
+		}
 
-# class AppURLopener(urllib.request.FancyURLopener):
-#     version = "Mozilla/5.0"
 
-# opener = AppURLopener()
-# response = opener.open('http://httpbin.org/user-agent')
-
-import urllib2,cookielib
-
-site= "http://www.calvinklein.us/shop/en/ck/sale"
-hdr = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11',
-       'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-       'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
-       'Accept-Encoding': 'none',
-       'Accept-Language': 'en-US,en;q=0.8',
-       'Connection': 'keep-alive'}
-
-req = urllib2.Request(site, headers=hdr)
-
-try:
-    page = urllib2.urlopen(req)
-except urllib2.HTTPError, e:
-    print e.fp.read()
-
-content = page.read()
-print content

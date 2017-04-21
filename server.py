@@ -1,7 +1,7 @@
 import traceback
 
 from flask import Flask, render_template, request, jsonify
-import scripts.webcrawler
+import scripts.offers as offers
 import sqlite3 as sql
 import random as rand
 import json
@@ -22,18 +22,24 @@ app = Flask(__name__)
 def render():
     return render_template('myfile.html')
 
-# @app.route('/suggestions')
-# def getSuggestions():
-# 	print request.method
-# 	if request.method == 'GET':
-# 		return "No input file specified"
-# 	else:
-# 		return render_template('myfile.html')
-
-# @app.route('/suggestions/movies')
-# def getMovies():
-# 	return jsonify({'data':'Movie Data'})
-
+@app.route("/suggestions",methods=["GET"])
+def users_suggestions():
+    output = {}
+    output["success"] = False
+    output["message"] = "Login API Called"
+    output["exception"] = False
+    output["data"] = {}
+    try:
+        output["data"]["offers"] = offers.getOffer()
+        output["data"]["sale"] = offers.getSale(request.query_string.split("&"))
+    except ValueError as ve:
+        output["message"] = ve.message
+        output["exception"] = True
+    except Exception as e:
+        print_debug(str(traceback.format_exc()), "!", "#")
+        output["message"] = str(traceback.format_exc())
+        output["exception"] = True
+    return jsonify(output)
 
 def print_debug(output,start = "*",end = "*"):
     if print_debug_flag:
