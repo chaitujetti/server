@@ -9,6 +9,7 @@ from flask import jsonify
 
 
 database_location = "./database/"
+database_location = "/var/www/html/server/database/"
 database_name = database_location + "mc_project13.db"
 random_num = str(rand.randrange(0,1000))
 print_debug_flag = True
