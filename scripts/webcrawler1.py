@@ -1,6 +1,9 @@
 import scrapy
 import re
 
+offer_file_name = "/var/www/html/server/offers.txt"
+sale_file_name = "/var/www/html/server/sale.txt"
+
 class AbercrombieSpider(scrapy.Spider):
 	name = "abercrombie"
 	start_urls = ['https://www.abercrombie.com/shop/us/sale']
@@ -8,8 +11,8 @@ class AbercrombieSpider(scrapy.Spider):
 	def parse(self, response):
 		heading = response.css('h4::text').extract()
 		a = response.css('a::text').extract()
-		fo = open('offers.txt', 'a')
-		f1 = open('sale.txt', 'a')
+		fo = open(offer_file_name, 'a')
+		f1 = open(sale_file_name, 'a')
 		for i in heading:
 			i = i.strip()
 			i = i.replace('\n', '')
