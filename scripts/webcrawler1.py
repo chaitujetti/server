@@ -16,19 +16,19 @@ class AbercrombieSpider(scrapy.Spider):
 			k = re.search( r'(offer|off|Offer|OFFER|OFF|sale|Sale|SALE)', i, re.M|re.I)
 			if k != None:
 				if k.group(1) != None:
-					fo.write((i+'|Abercrombie,').encode('utf-8'))
+					fo.write((i+'|Abercrombie#').encode('utf-8'))
 		for i in a:
 			i = i.strip()
 			i = i.replace('\n', '')
 			k = re.search( r'(offer|off|Offer|OFFER|OFF|sale|Sale|SALE)', i, re.M|re.I)
 			if k != None:
 				if k.group(1) != None:
-					fo.write((i+'|Abercrombie,').encode('utf-8'))
+					fo.write((i+'|Abercrombie#').encode('utf-8'))
 				else:
-					f1.write((i+'|Abercrombie,').encode('utf-8'))
+					f1.write((i+'|Abercrombie#').encode('utf-8'))
 			else:
 				if i != '':
-					f1.write((i+'|Abercrombie,').encode('utf-8'))
+					f1.write((i+'|Abercrombie#').encode('utf-8'))
 		fo.close()
 		f1.close()
 
