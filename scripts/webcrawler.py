@@ -1,6 +1,10 @@
 import scrapy
 import re
 
+
+offer_file_name = "/var/www/html/server/scripts/offers.txt"
+sale_file_name = "/var/www/html/server/scripts/sale.txt"
+
 class OffersSpider(scrapy.Spider):
 	name = "Offers"
 	start_urls = ['http://www.calvinklein.us/shop/en/ck/sale']
@@ -10,8 +14,8 @@ class OffersSpider(scrapy.Spider):
 		heading = response.css('h2::text').extract()
 		passage = response.css('p::text').extract()
 		a = response.css('a::text').extract()
-		fo = open('offers.txt', 'w')
-		f1 = open('sale.txt', 'w')
+		fo = open(offer_file_name, 'w')
+		f1 = open(sale_file_name, 'w')
 		for i in title:
 			i = i.strip()
 			i = i.replace('\n', '')

@@ -12,8 +12,8 @@ database_location = "./database/"
 database_location = "/var/www/html/server/database/"
 database_name = database_location + "mc_project13.db"
 random_num = str(rand.randrange(0,1000))
-print_debug_flag = True
-random_input_flag = True
+print_debug_flag = False
+random_input_flag = False
 
 
 app = Flask(__name__)
@@ -117,8 +117,8 @@ def users_login():
                 query_output = sql_result["result"]
                 # print_debug(str(query_output))
                 if len(query_output) == 0:
-                    # output["message"] = "Sorry Username Not Found"
-                    output["message"] = "Check Username or Password"
+                    output["message"] = "Please Register !! - Sorry Username Not Found"
+                    # output["message"] = "Check Username or Password"
                 else:
                     for cur_output in query_output:
                         cur_user_name = cur_output[3]
