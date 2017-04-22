@@ -2,8 +2,9 @@ import scrapy
 import re
 
 
-offer_file_name = "/var/www/html/server/offers.txt"
-sale_file_name = "/var/www/html/server/sale.txt"
+offer_file_name = "/var/www/html/server/scripts/offers.txt"
+sale_file_name = "/var/www/html/server/scripts/sale.txt"
+
 class OffersSpider(scrapy.Spider):
 	name = "Offers"
 	start_urls = ['http://www.calvinklein.us/shop/en/ck/sale']

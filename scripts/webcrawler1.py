@@ -1,8 +1,8 @@
 import scrapy
 import re
 
-offer_file_name = "/var/www/html/server/offers.txt"
-sale_file_name = "/var/www/html/server/sale.txt"
+offer_file_name = "/var/www/html/server/scripts/offers.txt"
+sale_file_name = "/var/www/html/server/scripts/sale.txt"
 
 class AbercrombieSpider(scrapy.Spider):
 	name = "abercrombie"
